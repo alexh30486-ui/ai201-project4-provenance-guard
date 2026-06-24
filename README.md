@@ -20,26 +20,8 @@ The system uses a hybrid detection engine combining LLM semantic analysis and lo
 
 ```text
 [User Input] --> [Flask /submit] --> [LLM Signal: Groq Llama 3]
-                      |                        |
-                      +--> [Stylometric Signal] --+--> [Confidence Engine]
-                      |     (Heuristics)               (Weighted Avg)
-                      |                                      |
-             [Audit Log / SQLite] <--------------------------+
-
-## 🚀 Installation & Setup
-
-```bash
-# 1. Navigate to project directory and activate virtual environment
-cd ai201-project4-provenance-guard
-source .venv/bin/activate
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Setup API key
-# (Copy the example file, open it, and paste your GROQ_API_KEY)
-cp .env.example .env
-nano .env
-
-# 4. Run the server
-python app.py
+                     |                        |
+                     +--> [Stylometric Signal] --+--> [Confidence Engine]
+                     |     (Heuristics)               (Weighted Avg)
+                     |                                      |
+            [Audit Log / SQLite] <--------------------------+
