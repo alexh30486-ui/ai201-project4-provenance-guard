@@ -15,6 +15,16 @@ An AI attribution detection system for creative writing platforms. It analyzes s
 - **Audit Log**: Full SQLite database (`audit.db`) logging every decision and appeal, utilizing UUIDs and content hashing for privacy.
 
 ---
+## 🏗️ Architecture
+The system uses a hybrid detection engine combining LLM semantic analysis and local stylometric heuristics.
+
+```text
+[User Input] --> [Flask /submit] --> [LLM Signal: Groq Llama 3]
+                      |                        |
+                      +--> [Stylometric Signal] --+--> [Confidence Engine]
+                      |     (Heuristics)               (Weighted Avg)
+                      |                                      |
+             [Audit Log / SQLite] <--------------------------+
 
 ## 🚀 Installation & Setup
 
